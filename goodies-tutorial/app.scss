@@ -1,0 +1,111 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:700);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+$black: #494949;
+$base-color: lighten(black, 30%);
+$alternative-color: lighten(#494949, 5%);
+$alert-color: #B0886D;
+$confirm-color: #FFA500;
+$active-color: darken($base-color, 1%);
+ 
+// GRADIENTS
+$base-gradient: 'none';
+$page-bg-color: -webkit-linear-gradient(bottom, darken(white, 15%) 11%, rgb(255,255,255) 100%);
+$form-bg-color: -webkit-linear-gradient(top, darken(white, 15%) 11%, rgb(255,255,255) 100%);
+
+@import 'sencha-touch/default';
+@import 'sencha-touch/default/src/_Class.scss';
+@import 'sencha-touch/default/src/_Button.scss';
+@import 'sencha-touch/default/src/_Panel.scss';
+@import 'sencha-touch/default/src/_MessageBox.scss';
+@import 'sencha-touch/default/src/_Toolbar.scss';
+@import 'sencha-touch/default/src/carousel/_Carousel.scss';
+@import 'sencha-touch/default/src/form/_Panel.scss';
+@import 'sencha-touch/default/src/form/_FieldSet.scss';
+@import 'sencha-touch/default/src/field/_Field';
+@import 'sencha-touch/default/src/field/_Checkbox.scss';
+@import 'sencha-touch/default/src/field/_Select.scss';
+@import 'sencha-touch/default/src/field/_Slider.scss';
+@import 'sencha-touch/default/src/field/_Spinner.scss';
+@import 'sencha-touch/default/src/picker/_Picker.scss';
+@import 'sencha-touch/default/src/slider/_Slider.scss';
+@import 'sencha-touch/default/src/slider/_Toggle.scss';
+
+@include sencha-toolbar-ui('light', #f2f2f2, 'bevel');
+
+// Custom code goes here..
+
+body {
+    font-size: 62.5%;
+	font-family: HelveticaNeue-Light, Helvetica, sans-serif;
+	letter-spacing: 1px;
+	text-shadow: 1px 2px 1px #ffffff;
+}
+
+.x-form-label span {
+    letter-spacing: 1px;
+	font: {
+		family: HelveticaNeue-Light, Helvetica, sans-serif;
+	}
+}
+
+.title {
+	.x-title {
+	    font: {
+	        family: "Lobster";
+	        size: 1.2em;
+	    }
+	    line-height: 2.5em;
+	    text-shadow: none;
+   		letter-spacing: -1px;
+	}
+}
+
+.x-mask-message,
+.x-button {
+    text-shadow: none;
+	letter-spacing: -1px;		
+}
+
+.x-form-fieldset-title {
+    font: {
+        family: "Lobster";
+        size: 1.2em;
+    }
+    letter-spacing: -1px;
+}
+
+.footer {
+    padding: 12px;
+    text-align: right;
+    letter-spacing: 0;
+    font: {
+        family: "Lobster";
+        size: 0.5em;
+    }
+    a {
+        color :#000;
+    }
+}
+
+.textview {
+    color: black;
+    font: {
+        family: "Oswald";
+        size: 1.8em;
+    }
+    line-height: 1.2em;
+    letter-spacing: -1px;
+    padding: 1em;
+    text-transform: uppercase;
+
+    .yes {
+        color: $confirm-color;
+    }
+    .no {
+        color: $confirm-color;
+    }
+    .temp {
+        color: $confirm-color;
+    }
+}
