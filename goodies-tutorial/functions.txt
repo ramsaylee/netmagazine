@@ -6,7 +6,7 @@
 			'Ext.MessageBox'
 	],
 
-	API_KEY: 'ahda57e4e34pe35ar5pjekbh', //http://free.worldweatheronline.com
+	API_KEY: 'ahda57e4e34pe35ar5pjekbh', //http://api.worldweatheronline.com/
 
 	/* 
 	The method loadData() starts with showing a loading mask. 
