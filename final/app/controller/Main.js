@@ -62,10 +62,8 @@ Ext.define('Dinmu.controller.Main', {
             Ext.Msg.alert("Oops", errorstring);
 
         } else {
-
             store.add(model.getData());
             store.sync();
-
             Dinmu.utils.Functions.loadData();
         }
 

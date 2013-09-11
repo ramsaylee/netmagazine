@@ -41,12 +41,12 @@ Ext.define('Dinmu.utils.Functions', {
 					var city = records[0].get('city');
 					var country = records[0].get('country');
 					var geo = records[0].get('geo');
-
+					console.log(geo);
 					//prefill all fields
 					if(!geo){
-						Ext.ComponentQuery.query('settingsview togglefield[name=geo]')[0].toggle(false);
+						Ext.ComponentQuery.query('settingsview togglefield[name=geo]')[0].setValue(0);
 					} else {
-						Ext.ComponentQuery.query('settingsview togglefield[name=geo]')[0].toggle(true);
+						Ext.ComponentQuery.query('settingsview togglefield[name=geo]')[0].setValue(1);
 					}
 					
 					Ext.ComponentQuery.query('settingsview selectfield[name=units]')[0].setValue(units);
