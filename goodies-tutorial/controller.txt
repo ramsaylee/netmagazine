@@ -7,7 +7,7 @@
 * Dinmu.utils.Functions.loadData() for loading the weather data.
 * Also don't forget to hide the loading throbber.
 */
- onRefresh: function() {
+     onRefresh: function() {
         Ext.Viewport.setMasked({
             xtype: 'loadmask',
             indicator: true,
@@ -15,7 +15,6 @@
         });
 
         var errorstring = "";
-
         var store = Ext.getStore('Settings');
         //remove previous settings
         store.removeAll();
@@ -24,8 +23,8 @@
         var model = Ext.create("Dinmu.model.Setting", {});
         this.getSettingsView().updateRecord(model);
         var errors = model.validate();
-        
-        if (errors.isValid() === false) {
+
+        if (model.get('geo') !== true && errors.isValid() === false) {
             errors.each(function(errorObj) {
                 errorstring += errorObj.getMessage() + "<br />";
             });
@@ -33,10 +32,8 @@
             Ext.Msg.alert("Oops", errorstring);
 
         } else {
-
             store.add(model.getData());
             store.sync();
-
             Dinmu.utils.Functions.loadData();
         }
 

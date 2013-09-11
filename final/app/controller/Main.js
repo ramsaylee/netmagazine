@@ -44,7 +44,6 @@ Ext.define('Dinmu.controller.Main', {
         });
 
         var errorstring = "";
-
         var store = Ext.getStore('Settings');
         //remove previous settings
         store.removeAll();
@@ -53,8 +52,8 @@ Ext.define('Dinmu.controller.Main', {
         var model = Ext.create("Dinmu.model.Setting", {});
         this.getSettingsView().updateRecord(model);
         var errors = model.validate();
-        
-        if (errors.isValid() === false) {
+
+        if (model.get('geo') !== true && errors.isValid() === false) {
             errors.each(function(errorObj) {
                 errorstring += errorObj.getMessage() + "<br />";
             });
