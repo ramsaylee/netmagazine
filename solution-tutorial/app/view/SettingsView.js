@@ -34,11 +34,13 @@ Ext.define('Dinmu.view.SettingsView', {
                     }, {
                         name: 'city',
                         xtype: 'textfield',
-                        label: 'City'
+                        label: 'City',
+                        disabled: true
                     }, {
                         name: 'country',
                         xtype: 'textfield',
-                        label: 'Country'
+                        label: 'Country',
+                        disabled: true
                     }, {
                         xtype: 'button',
                         ui: 'confirm',

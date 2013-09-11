@@ -45,28 +45,31 @@ Ext.define('Dinmu.controller.Main', {
 
         var errorstring = "";
 
+        var store = Ext.getStore('Settings');
+        //remove previous settings
+        store.removeAll();
+        store.sync();
+
         var model = Ext.create("Dinmu.model.Setting", {});
         this.getSettingsView().updateRecord(model);
-
         var errors = model.validate();
-
-        if (!errors.isValid() && model.get('geo') === 0) {
+        
+        if (errors.isValid() === false) {
             errors.each(function(errorObj) {
                 errorstring += errorObj.getMessage() + "<br />";
             });
 
             Ext.Msg.alert("Oops", errorstring);
+
         } else {
 
-            var store = Ext.getStore('Settings');
-            store.removeAll();
             store.add(model.getData());
             store.sync();
 
             Dinmu.utils.Functions.loadData();
         }
 
-        Ext.Viewport.mask();
+        Ext.Viewport.unmask();
     },
     onSettingsBtnTap: function() {
         this.getMainView().setActiveItem(0);

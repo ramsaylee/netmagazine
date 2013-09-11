@@ -6,7 +6,6 @@ Ext.define('Dinmu.utils.Functions', {
 			'Ext.device.Geolocation',
 			'Ext.MessageBox'
 	],
-
 	API_KEY: 'ahda57e4e34pe35ar5pjekbh', //http://free.worldweatheronline.com/ API KEY
 
 	/* 
